@@ -1,0 +1,3 @@
+"use strict"
+const { makeTypedQueryFactory: $mkFactory } = require("../runtime/edge.js")
+exports.assetTransactions = /*#__PURE__*/ $mkFactory("SELECT DISTINCT ON (txo.tx_id)\nencode(tx.hash, 'hex') AS \"tx_hash!\",\ntx.block_index AS \"tx_index!\",\nb.block_no AS \"block_height!\",\nextract(\nepoch\nFROM b.time\n)::INTEGER AS \"block_time!\"\nFROM ma_tx_out mto\nJOIN multi_asset ma ON (mto.ident = ma.id)\nJOIN tx_out txo ON (mto.tx_out_id = txo.id)\nJOIN tx ON (txo.tx_id = tx.id)\nJOIN block b ON (b.id = tx.block_id)\nWHERE (encode(policy, 'hex') || encode(name, 'hex')) = $1\nORDER BY txo.tx_id ASC\nLIMIT $2\nOFFSET $3;")

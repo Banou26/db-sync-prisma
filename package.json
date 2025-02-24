@@ -5,12 +5,10 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run clean-build && npm run prisma-pull && npm run prisma-generate && npm run copy-sql && npm run replace-dependencies",
+    "build": "npm run clean-build && npm run prisma-pull && npm run prisma-generate",
     "clean-build": "rimraf dist",
     "prisma-pull": "prisma db pull",
-    "prisma-generate": "prisma generate --no-hints",
-    "copy-sql": "copyfiles -u 3 node_modules/.prisma/client/sql/* dist",
-    "replace-dependencies": "replace-in-file @prisma/client/runtime ../runtime dist/sql/*"
+    "prisma-generate": "prisma generate --sql --no-hints"
   },
   "author": "",
   "license": "ISC",
@@ -20,12 +18,10 @@
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@ts-safeql/eslint-plugin": "^3.6.6",
-    "copyfiles": "^2.4.1",
     "eslint": "^9.21.0",
     "globals": "^16.0.0",
     "libpg-query": "^16.3.0",
     "prisma": "^6.4.1",
-    "replace-in-file": "^8.3.0",
     "typescript-eslint": "^8.24.1"
   }
 }
