@@ -21,7 +21,7 @@ export default [
             {
               connections: [
                 {
-                  connectionUrl: process.env.FKN_SWAP_POSTGRES_CONNECTION_STRING,
+                  connectionUrl: process.env.DATABASE_URL,
                   // The migrations path:
                   migrationsDir: './prisma/migrations',
                   targets: [
