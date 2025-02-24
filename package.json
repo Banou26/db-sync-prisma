@@ -5,10 +5,12 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run prisma-pull && npm run prisma-generate",
+    "build": "npm run clean-build && npm run prisma-pull && npm run prisma-generate && npm run copy-sql && npm run replace-dependencies",
+    "clean-build": "rimraf dist",
     "prisma-pull": "prisma db pull",
     "prisma-generate": "prisma generate --no-hints",
-    "copy-sql": "copyfiles -u 3 node_modules/.prisma/client/sql/* dist"
+    "copy-sql": "copyfiles -u 3 node_modules/.prisma/client/sql/* dist",
+    "replace-dependencies": "replace-in-file @prisma/client/runtime ../runtime dist/sql/*"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +25,7 @@
     "globals": "^16.0.0",
     "libpg-query": "^16.3.0",
     "prisma": "^6.4.1",
+    "replace-in-file": "^8.3.0",
     "typescript-eslint": "^8.24.1"
   }
 }
