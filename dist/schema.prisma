@@ -145,6 +145,7 @@ model datum {
   bytes Bytes
 
   @@index([tx_id], map: "idx_datum_tx_id")
+  @@index([id], map: "idx_datum_id")
 }
 
 model delegation {
@@ -763,6 +764,7 @@ model script {
   serialised_size Int?
 
   @@index([tx_id], map: "idx_script_tx_id")
+  @@index([id], map: "idx_script_id")
 }
 
 model slot_leader {
@@ -899,6 +901,8 @@ model tx_out {
   @@index([tx_id], map: "idx_tx_out_tx_id")
   @@index([inline_datum_id])
   @@index([reference_script_id])
+  @@index([address], map: "idx_tx_out_address_hash", type: Hash)
+  @@index([consumed_by_tx_id, id], map: "idx_tx_out_consumed_by_id")
 }
 
 model voting_anchor {
@@ -935,6 +939,17 @@ model withdrawal {
   @@index([addr_id], map: "idx_withdrawal_addr_id")
   @@index([redeemer_id], map: "idx_withdrawal_redeemer_id")
   @@index([tx_id], map: "idx_withdrawal_tx_id")
+}
+
+model sqlx_migrations {
+  version        BigInt   @id
+  description    String
+  installed_on   DateTime @default(now()) @db.Timestamptz(6)
+  success        Boolean
+  checksum       Bytes
+  execution_time BigInt
+
+  @@map("_sqlx_migrations")
 }
 
 enum anchortype {

@@ -383,6 +383,11 @@ export type voting_procedure = $Result.DefaultSelection<Prisma.$voting_procedure
  * 
  */
 export type withdrawal = $Result.DefaultSelection<Prisma.$withdrawalPayload>
+/**
+ * Model sqlx_migrations
+ * 
+ */
+export type sqlx_migrations = $Result.DefaultSelection<Prisma.$sqlx_migrationsPayload>
 
 /**
  * Enums
@@ -1381,6 +1386,16 @@ export class PrismaClient<
     * ```
     */
   get withdrawal(): Prisma.withdrawalDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.sqlx_migrations`: Exposes CRUD operations for the **sqlx_migrations** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Sqlx_migrations
+    * const sqlx_migrations = await prisma.sqlx_migrations.findMany()
+    * ```
+    */
+  get sqlx_migrations(): Prisma.sqlx_migrationsDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -1894,7 +1909,8 @@ export namespace Prisma {
     tx_out: 'tx_out',
     voting_anchor: 'voting_anchor',
     voting_procedure: 'voting_procedure',
-    withdrawal: 'withdrawal'
+    withdrawal: 'withdrawal',
+    sqlx_migrations: 'sqlx_migrations'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1910,7 +1926,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "ada_pots" | "block" | "collateral_tx_in" | "collateral_tx_out" | "committee" | "committee_de_registration" | "committee_hash" | "committee_member" | "committee_registration" | "constitution" | "cost_model" | "datum" | "delegation" | "delegation_vote" | "delisted_pool" | "drep_distr" | "drep_hash" | "drep_registration" | "epoch" | "epoch_param" | "epoch_stake" | "epoch_stake_progress" | "epoch_state" | "epoch_sync_time" | "event_info" | "extra_key_witness" | "extra_migrations" | "gov_action_proposal" | "ma_tx_mint" | "ma_tx_out" | "meta" | "multi_asset" | "new_committee" | "off_chain_pool_data" | "off_chain_pool_fetch_error" | "off_chain_vote_author" | "off_chain_vote_data" | "off_chain_vote_drep_data" | "off_chain_vote_external_update" | "off_chain_vote_fetch_error" | "off_chain_vote_gov_action_data" | "off_chain_vote_reference" | "param_proposal" | "pool_hash" | "pool_metadata_ref" | "pool_owner" | "pool_relay" | "pool_retire" | "pool_stat" | "pool_update" | "pot_transfer" | "redeemer" | "redeemer_data" | "reference_tx_in" | "reserve" | "reserved_pool_ticker" | "reverse_index" | "reward" | "schema_version" | "script" | "slot_leader" | "stake_address" | "stake_deregistration" | "stake_registration" | "treasury" | "treasury_withdrawal" | "tx" | "tx_cbor" | "tx_in" | "tx_metadata" | "tx_out" | "voting_anchor" | "voting_procedure" | "withdrawal"
+      modelProps: "ada_pots" | "block" | "collateral_tx_in" | "collateral_tx_out" | "committee" | "committee_de_registration" | "committee_hash" | "committee_member" | "committee_registration" | "constitution" | "cost_model" | "datum" | "delegation" | "delegation_vote" | "delisted_pool" | "drep_distr" | "drep_hash" | "drep_registration" | "epoch" | "epoch_param" | "epoch_stake" | "epoch_stake_progress" | "epoch_state" | "epoch_sync_time" | "event_info" | "extra_key_witness" | "extra_migrations" | "gov_action_proposal" | "ma_tx_mint" | "ma_tx_out" | "meta" | "multi_asset" | "new_committee" | "off_chain_pool_data" | "off_chain_pool_fetch_error" | "off_chain_vote_author" | "off_chain_vote_data" | "off_chain_vote_drep_data" | "off_chain_vote_external_update" | "off_chain_vote_fetch_error" | "off_chain_vote_gov_action_data" | "off_chain_vote_reference" | "param_proposal" | "pool_hash" | "pool_metadata_ref" | "pool_owner" | "pool_relay" | "pool_retire" | "pool_stat" | "pool_update" | "pot_transfer" | "redeemer" | "redeemer_data" | "reference_tx_in" | "reserve" | "reserved_pool_ticker" | "reverse_index" | "reward" | "schema_version" | "script" | "slot_leader" | "stake_address" | "stake_deregistration" | "stake_registration" | "treasury" | "treasury_withdrawal" | "tx" | "tx_cbor" | "tx_in" | "tx_metadata" | "tx_out" | "voting_anchor" | "voting_procedure" | "withdrawal" | "sqlx_migrations"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -7390,6 +7406,80 @@ export namespace Prisma {
           }
         }
       }
+      sqlx_migrations: {
+        payload: Prisma.$sqlx_migrationsPayload<ExtArgs>
+        fields: Prisma.sqlx_migrationsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.sqlx_migrationsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.sqlx_migrationsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>
+          }
+          findFirst: {
+            args: Prisma.sqlx_migrationsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.sqlx_migrationsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>
+          }
+          findMany: {
+            args: Prisma.sqlx_migrationsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>[]
+          }
+          create: {
+            args: Prisma.sqlx_migrationsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>
+          }
+          createMany: {
+            args: Prisma.sqlx_migrationsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.sqlx_migrationsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>[]
+          }
+          delete: {
+            args: Prisma.sqlx_migrationsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>
+          }
+          update: {
+            args: Prisma.sqlx_migrationsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>
+          }
+          deleteMany: {
+            args: Prisma.sqlx_migrationsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.sqlx_migrationsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.sqlx_migrationsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>[]
+          }
+          upsert: {
+            args: Prisma.sqlx_migrationsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sqlx_migrationsPayload>
+          }
+          aggregate: {
+            args: Prisma.Sqlx_migrationsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSqlx_migrations>
+          }
+          groupBy: {
+            args: Prisma.sqlx_migrationsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Sqlx_migrationsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.sqlx_migrationsCountArgs<ExtArgs>
+            result: $Utils.Optional<Sqlx_migrationsCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -7552,6 +7642,7 @@ export namespace Prisma {
     voting_anchor?: voting_anchorOmit
     voting_procedure?: voting_procedureOmit
     withdrawal?: withdrawalOmit
+    sqlx_migrations?: sqlx_migrationsOmit
   }
 
   /* Types for Logging */
@@ -87362,6 +87453,1052 @@ export namespace Prisma {
 
 
   /**
+   * Model sqlx_migrations
+   */
+
+  export type AggregateSqlx_migrations = {
+    _count: Sqlx_migrationsCountAggregateOutputType | null
+    _avg: Sqlx_migrationsAvgAggregateOutputType | null
+    _sum: Sqlx_migrationsSumAggregateOutputType | null
+    _min: Sqlx_migrationsMinAggregateOutputType | null
+    _max: Sqlx_migrationsMaxAggregateOutputType | null
+  }
+
+  export type Sqlx_migrationsAvgAggregateOutputType = {
+    version: number | null
+    execution_time: number | null
+  }
+
+  export type Sqlx_migrationsSumAggregateOutputType = {
+    version: bigint | null
+    execution_time: bigint | null
+  }
+
+  export type Sqlx_migrationsMinAggregateOutputType = {
+    version: bigint | null
+    description: string | null
+    installed_on: Date | null
+    success: boolean | null
+    checksum: Uint8Array | null
+    execution_time: bigint | null
+  }
+
+  export type Sqlx_migrationsMaxAggregateOutputType = {
+    version: bigint | null
+    description: string | null
+    installed_on: Date | null
+    success: boolean | null
+    checksum: Uint8Array | null
+    execution_time: bigint | null
+  }
+
+  export type Sqlx_migrationsCountAggregateOutputType = {
+    version: number
+    description: number
+    installed_on: number
+    success: number
+    checksum: number
+    execution_time: number
+    _all: number
+  }
+
+
+  export type Sqlx_migrationsAvgAggregateInputType = {
+    version?: true
+    execution_time?: true
+  }
+
+  export type Sqlx_migrationsSumAggregateInputType = {
+    version?: true
+    execution_time?: true
+  }
+
+  export type Sqlx_migrationsMinAggregateInputType = {
+    version?: true
+    description?: true
+    installed_on?: true
+    success?: true
+    checksum?: true
+    execution_time?: true
+  }
+
+  export type Sqlx_migrationsMaxAggregateInputType = {
+    version?: true
+    description?: true
+    installed_on?: true
+    success?: true
+    checksum?: true
+    execution_time?: true
+  }
+
+  export type Sqlx_migrationsCountAggregateInputType = {
+    version?: true
+    description?: true
+    installed_on?: true
+    success?: true
+    checksum?: true
+    execution_time?: true
+    _all?: true
+  }
+
+  export type Sqlx_migrationsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which sqlx_migrations to aggregate.
+     */
+    where?: sqlx_migrationsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sqlx_migrations to fetch.
+     */
+    orderBy?: sqlx_migrationsOrderByWithRelationInput | sqlx_migrationsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: sqlx_migrationsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sqlx_migrations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sqlx_migrations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned sqlx_migrations
+    **/
+    _count?: true | Sqlx_migrationsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Sqlx_migrationsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Sqlx_migrationsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Sqlx_migrationsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Sqlx_migrationsMaxAggregateInputType
+  }
+
+  export type GetSqlx_migrationsAggregateType<T extends Sqlx_migrationsAggregateArgs> = {
+        [P in keyof T & keyof AggregateSqlx_migrations]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSqlx_migrations[P]>
+      : GetScalarType<T[P], AggregateSqlx_migrations[P]>
+  }
+
+
+
+
+  export type sqlx_migrationsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: sqlx_migrationsWhereInput
+    orderBy?: sqlx_migrationsOrderByWithAggregationInput | sqlx_migrationsOrderByWithAggregationInput[]
+    by: Sqlx_migrationsScalarFieldEnum[] | Sqlx_migrationsScalarFieldEnum
+    having?: sqlx_migrationsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Sqlx_migrationsCountAggregateInputType | true
+    _avg?: Sqlx_migrationsAvgAggregateInputType
+    _sum?: Sqlx_migrationsSumAggregateInputType
+    _min?: Sqlx_migrationsMinAggregateInputType
+    _max?: Sqlx_migrationsMaxAggregateInputType
+  }
+
+  export type Sqlx_migrationsGroupByOutputType = {
+    version: bigint
+    description: string
+    installed_on: Date
+    success: boolean
+    checksum: Uint8Array
+    execution_time: bigint
+    _count: Sqlx_migrationsCountAggregateOutputType | null
+    _avg: Sqlx_migrationsAvgAggregateOutputType | null
+    _sum: Sqlx_migrationsSumAggregateOutputType | null
+    _min: Sqlx_migrationsMinAggregateOutputType | null
+    _max: Sqlx_migrationsMaxAggregateOutputType | null
+  }
+
+  type GetSqlx_migrationsGroupByPayload<T extends sqlx_migrationsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Sqlx_migrationsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Sqlx_migrationsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Sqlx_migrationsGroupByOutputType[P]>
+            : GetScalarType<T[P], Sqlx_migrationsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type sqlx_migrationsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    version?: boolean
+    description?: boolean
+    installed_on?: boolean
+    success?: boolean
+    checksum?: boolean
+    execution_time?: boolean
+  }, ExtArgs["result"]["sqlx_migrations"]>
+
+  export type sqlx_migrationsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    version?: boolean
+    description?: boolean
+    installed_on?: boolean
+    success?: boolean
+    checksum?: boolean
+    execution_time?: boolean
+  }, ExtArgs["result"]["sqlx_migrations"]>
+
+  export type sqlx_migrationsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    version?: boolean
+    description?: boolean
+    installed_on?: boolean
+    success?: boolean
+    checksum?: boolean
+    execution_time?: boolean
+  }, ExtArgs["result"]["sqlx_migrations"]>
+
+  export type sqlx_migrationsSelectScalar = {
+    version?: boolean
+    description?: boolean
+    installed_on?: boolean
+    success?: boolean
+    checksum?: boolean
+    execution_time?: boolean
+  }
+
+  export type sqlx_migrationsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"version" | "description" | "installed_on" | "success" | "checksum" | "execution_time", ExtArgs["result"]["sqlx_migrations"]>
+
+  export type $sqlx_migrationsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "sqlx_migrations"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      version: bigint
+      description: string
+      installed_on: Date
+      success: boolean
+      checksum: Uint8Array
+      execution_time: bigint
+    }, ExtArgs["result"]["sqlx_migrations"]>
+    composites: {}
+  }
+
+  type sqlx_migrationsGetPayload<S extends boolean | null | undefined | sqlx_migrationsDefaultArgs> = $Result.GetResult<Prisma.$sqlx_migrationsPayload, S>
+
+  type sqlx_migrationsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<sqlx_migrationsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Sqlx_migrationsCountAggregateInputType | true
+    }
+
+  export interface sqlx_migrationsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['sqlx_migrations'], meta: { name: 'sqlx_migrations' } }
+    /**
+     * Find zero or one Sqlx_migrations that matches the filter.
+     * @param {sqlx_migrationsFindUniqueArgs} args - Arguments to find a Sqlx_migrations
+     * @example
+     * // Get one Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends sqlx_migrationsFindUniqueArgs>(args: SelectSubset<T, sqlx_migrationsFindUniqueArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "findUnique", ClientOptions> | null, null, ExtArgs, ClientOptions>
+
+    /**
+     * Find one Sqlx_migrations that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {sqlx_migrationsFindUniqueOrThrowArgs} args - Arguments to find a Sqlx_migrations
+     * @example
+     * // Get one Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends sqlx_migrationsFindUniqueOrThrowArgs>(args: SelectSubset<T, sqlx_migrationsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+
+    /**
+     * Find the first Sqlx_migrations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sqlx_migrationsFindFirstArgs} args - Arguments to find a Sqlx_migrations
+     * @example
+     * // Get one Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends sqlx_migrationsFindFirstArgs>(args?: SelectSubset<T, sqlx_migrationsFindFirstArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "findFirst", ClientOptions> | null, null, ExtArgs, ClientOptions>
+
+    /**
+     * Find the first Sqlx_migrations that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sqlx_migrationsFindFirstOrThrowArgs} args - Arguments to find a Sqlx_migrations
+     * @example
+     * // Get one Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends sqlx_migrationsFindFirstOrThrowArgs>(args?: SelectSubset<T, sqlx_migrationsFindFirstOrThrowArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "findFirstOrThrow", ClientOptions>, never, ExtArgs, ClientOptions>
+
+    /**
+     * Find zero or more Sqlx_migrations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sqlx_migrationsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.findMany()
+     * 
+     * // Get first 10 Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.findMany({ take: 10 })
+     * 
+     * // Only select the `version`
+     * const sqlx_migrationsWithVersionOnly = await prisma.sqlx_migrations.findMany({ select: { version: true } })
+     * 
+     */
+    findMany<T extends sqlx_migrationsFindManyArgs>(args?: SelectSubset<T, sqlx_migrationsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "findMany", ClientOptions>>
+
+    /**
+     * Create a Sqlx_migrations.
+     * @param {sqlx_migrationsCreateArgs} args - Arguments to create a Sqlx_migrations.
+     * @example
+     * // Create one Sqlx_migrations
+     * const Sqlx_migrations = await prisma.sqlx_migrations.create({
+     *   data: {
+     *     // ... data to create a Sqlx_migrations
+     *   }
+     * })
+     * 
+     */
+    create<T extends sqlx_migrationsCreateArgs>(args: SelectSubset<T, sqlx_migrationsCreateArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "create", ClientOptions>, never, ExtArgs, ClientOptions>
+
+    /**
+     * Create many Sqlx_migrations.
+     * @param {sqlx_migrationsCreateManyArgs} args - Arguments to create many Sqlx_migrations.
+     * @example
+     * // Create many Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends sqlx_migrationsCreateManyArgs>(args?: SelectSubset<T, sqlx_migrationsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Sqlx_migrations and returns the data saved in the database.
+     * @param {sqlx_migrationsCreateManyAndReturnArgs} args - Arguments to create many Sqlx_migrations.
+     * @example
+     * // Create many Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Sqlx_migrations and only return the `version`
+     * const sqlx_migrationsWithVersionOnly = await prisma.sqlx_migrations.createManyAndReturn({
+     *   select: { version: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends sqlx_migrationsCreateManyAndReturnArgs>(args?: SelectSubset<T, sqlx_migrationsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "createManyAndReturn", ClientOptions>>
+
+    /**
+     * Delete a Sqlx_migrations.
+     * @param {sqlx_migrationsDeleteArgs} args - Arguments to delete one Sqlx_migrations.
+     * @example
+     * // Delete one Sqlx_migrations
+     * const Sqlx_migrations = await prisma.sqlx_migrations.delete({
+     *   where: {
+     *     // ... filter to delete one Sqlx_migrations
+     *   }
+     * })
+     * 
+     */
+    delete<T extends sqlx_migrationsDeleteArgs>(args: SelectSubset<T, sqlx_migrationsDeleteArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "delete", ClientOptions>, never, ExtArgs, ClientOptions>
+
+    /**
+     * Update one Sqlx_migrations.
+     * @param {sqlx_migrationsUpdateArgs} args - Arguments to update one Sqlx_migrations.
+     * @example
+     * // Update one Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends sqlx_migrationsUpdateArgs>(args: SelectSubset<T, sqlx_migrationsUpdateArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "update", ClientOptions>, never, ExtArgs, ClientOptions>
+
+    /**
+     * Delete zero or more Sqlx_migrations.
+     * @param {sqlx_migrationsDeleteManyArgs} args - Arguments to filter Sqlx_migrations to delete.
+     * @example
+     * // Delete a few Sqlx_migrations
+     * const { count } = await prisma.sqlx_migrations.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends sqlx_migrationsDeleteManyArgs>(args?: SelectSubset<T, sqlx_migrationsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Sqlx_migrations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sqlx_migrationsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends sqlx_migrationsUpdateManyArgs>(args: SelectSubset<T, sqlx_migrationsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Sqlx_migrations and returns the data updated in the database.
+     * @param {sqlx_migrationsUpdateManyAndReturnArgs} args - Arguments to update many Sqlx_migrations.
+     * @example
+     * // Update many Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Sqlx_migrations and only return the `version`
+     * const sqlx_migrationsWithVersionOnly = await prisma.sqlx_migrations.updateManyAndReturn({
+     *   select: { version: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends sqlx_migrationsUpdateManyAndReturnArgs>(args: SelectSubset<T, sqlx_migrationsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "updateManyAndReturn", ClientOptions>>
+
+    /**
+     * Create or update one Sqlx_migrations.
+     * @param {sqlx_migrationsUpsertArgs} args - Arguments to update or create a Sqlx_migrations.
+     * @example
+     * // Update or create a Sqlx_migrations
+     * const sqlx_migrations = await prisma.sqlx_migrations.upsert({
+     *   create: {
+     *     // ... data to create a Sqlx_migrations
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Sqlx_migrations we want to update
+     *   }
+     * })
+     */
+    upsert<T extends sqlx_migrationsUpsertArgs>(args: SelectSubset<T, sqlx_migrationsUpsertArgs<ExtArgs>>): Prisma__sqlx_migrationsClient<$Result.GetResult<Prisma.$sqlx_migrationsPayload<ExtArgs>, T, "upsert", ClientOptions>, never, ExtArgs, ClientOptions>
+
+
+    /**
+     * Count the number of Sqlx_migrations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sqlx_migrationsCountArgs} args - Arguments to filter Sqlx_migrations to count.
+     * @example
+     * // Count the number of Sqlx_migrations
+     * const count = await prisma.sqlx_migrations.count({
+     *   where: {
+     *     // ... the filter for the Sqlx_migrations we want to count
+     *   }
+     * })
+    **/
+    count<T extends sqlx_migrationsCountArgs>(
+      args?: Subset<T, sqlx_migrationsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Sqlx_migrationsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Sqlx_migrations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Sqlx_migrationsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Sqlx_migrationsAggregateArgs>(args: Subset<T, Sqlx_migrationsAggregateArgs>): Prisma.PrismaPromise<GetSqlx_migrationsAggregateType<T>>
+
+    /**
+     * Group by Sqlx_migrations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sqlx_migrationsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends sqlx_migrationsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: sqlx_migrationsGroupByArgs['orderBy'] }
+        : { orderBy?: sqlx_migrationsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, sqlx_migrationsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSqlx_migrationsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the sqlx_migrations model
+   */
+  readonly fields: sqlx_migrationsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for sqlx_migrations.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__sqlx_migrationsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the sqlx_migrations model
+   */ 
+  interface sqlx_migrationsFieldRefs {
+    readonly version: FieldRef<"sqlx_migrations", 'BigInt'>
+    readonly description: FieldRef<"sqlx_migrations", 'String'>
+    readonly installed_on: FieldRef<"sqlx_migrations", 'DateTime'>
+    readonly success: FieldRef<"sqlx_migrations", 'Boolean'>
+    readonly checksum: FieldRef<"sqlx_migrations", 'Bytes'>
+    readonly execution_time: FieldRef<"sqlx_migrations", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * sqlx_migrations findUnique
+   */
+  export type sqlx_migrationsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * Filter, which sqlx_migrations to fetch.
+     */
+    where: sqlx_migrationsWhereUniqueInput
+  }
+
+  /**
+   * sqlx_migrations findUniqueOrThrow
+   */
+  export type sqlx_migrationsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * Filter, which sqlx_migrations to fetch.
+     */
+    where: sqlx_migrationsWhereUniqueInput
+  }
+
+  /**
+   * sqlx_migrations findFirst
+   */
+  export type sqlx_migrationsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * Filter, which sqlx_migrations to fetch.
+     */
+    where?: sqlx_migrationsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sqlx_migrations to fetch.
+     */
+    orderBy?: sqlx_migrationsOrderByWithRelationInput | sqlx_migrationsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for sqlx_migrations.
+     */
+    cursor?: sqlx_migrationsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sqlx_migrations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sqlx_migrations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of sqlx_migrations.
+     */
+    distinct?: Sqlx_migrationsScalarFieldEnum | Sqlx_migrationsScalarFieldEnum[]
+  }
+
+  /**
+   * sqlx_migrations findFirstOrThrow
+   */
+  export type sqlx_migrationsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * Filter, which sqlx_migrations to fetch.
+     */
+    where?: sqlx_migrationsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sqlx_migrations to fetch.
+     */
+    orderBy?: sqlx_migrationsOrderByWithRelationInput | sqlx_migrationsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for sqlx_migrations.
+     */
+    cursor?: sqlx_migrationsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sqlx_migrations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sqlx_migrations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of sqlx_migrations.
+     */
+    distinct?: Sqlx_migrationsScalarFieldEnum | Sqlx_migrationsScalarFieldEnum[]
+  }
+
+  /**
+   * sqlx_migrations findMany
+   */
+  export type sqlx_migrationsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * Filter, which sqlx_migrations to fetch.
+     */
+    where?: sqlx_migrationsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sqlx_migrations to fetch.
+     */
+    orderBy?: sqlx_migrationsOrderByWithRelationInput | sqlx_migrationsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing sqlx_migrations.
+     */
+    cursor?: sqlx_migrationsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sqlx_migrations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sqlx_migrations.
+     */
+    skip?: number
+    distinct?: Sqlx_migrationsScalarFieldEnum | Sqlx_migrationsScalarFieldEnum[]
+  }
+
+  /**
+   * sqlx_migrations create
+   */
+  export type sqlx_migrationsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * The data needed to create a sqlx_migrations.
+     */
+    data: XOR<sqlx_migrationsCreateInput, sqlx_migrationsUncheckedCreateInput>
+  }
+
+  /**
+   * sqlx_migrations createMany
+   */
+  export type sqlx_migrationsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many sqlx_migrations.
+     */
+    data: sqlx_migrationsCreateManyInput | sqlx_migrationsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * sqlx_migrations createManyAndReturn
+   */
+  export type sqlx_migrationsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * The data used to create many sqlx_migrations.
+     */
+    data: sqlx_migrationsCreateManyInput | sqlx_migrationsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * sqlx_migrations update
+   */
+  export type sqlx_migrationsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * The data needed to update a sqlx_migrations.
+     */
+    data: XOR<sqlx_migrationsUpdateInput, sqlx_migrationsUncheckedUpdateInput>
+    /**
+     * Choose, which sqlx_migrations to update.
+     */
+    where: sqlx_migrationsWhereUniqueInput
+  }
+
+  /**
+   * sqlx_migrations updateMany
+   */
+  export type sqlx_migrationsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update sqlx_migrations.
+     */
+    data: XOR<sqlx_migrationsUpdateManyMutationInput, sqlx_migrationsUncheckedUpdateManyInput>
+    /**
+     * Filter which sqlx_migrations to update
+     */
+    where?: sqlx_migrationsWhereInput
+    /**
+     * Limit how many sqlx_migrations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * sqlx_migrations updateManyAndReturn
+   */
+  export type sqlx_migrationsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * The data used to update sqlx_migrations.
+     */
+    data: XOR<sqlx_migrationsUpdateManyMutationInput, sqlx_migrationsUncheckedUpdateManyInput>
+    /**
+     * Filter which sqlx_migrations to update
+     */
+    where?: sqlx_migrationsWhereInput
+    /**
+     * Limit how many sqlx_migrations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * sqlx_migrations upsert
+   */
+  export type sqlx_migrationsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * The filter to search for the sqlx_migrations to update in case it exists.
+     */
+    where: sqlx_migrationsWhereUniqueInput
+    /**
+     * In case the sqlx_migrations found by the `where` argument doesn't exist, create a new sqlx_migrations with this data.
+     */
+    create: XOR<sqlx_migrationsCreateInput, sqlx_migrationsUncheckedCreateInput>
+    /**
+     * In case the sqlx_migrations was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<sqlx_migrationsUpdateInput, sqlx_migrationsUncheckedUpdateInput>
+  }
+
+  /**
+   * sqlx_migrations delete
+   */
+  export type sqlx_migrationsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+    /**
+     * Filter which sqlx_migrations to delete.
+     */
+    where: sqlx_migrationsWhereUniqueInput
+  }
+
+  /**
+   * sqlx_migrations deleteMany
+   */
+  export type sqlx_migrationsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which sqlx_migrations to delete
+     */
+    where?: sqlx_migrationsWhereInput
+    /**
+     * Limit how many sqlx_migrations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * sqlx_migrations without action
+   */
+  export type sqlx_migrationsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sqlx_migrations
+     */
+    select?: sqlx_migrationsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the sqlx_migrations
+     */
+    omit?: sqlx_migrationsOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -88348,6 +89485,18 @@ export namespace Prisma {
   };
 
   export type WithdrawalScalarFieldEnum = (typeof WithdrawalScalarFieldEnum)[keyof typeof WithdrawalScalarFieldEnum]
+
+
+  export const Sqlx_migrationsScalarFieldEnum: {
+    version: 'version',
+    description: 'description',
+    installed_on: 'installed_on',
+    success: 'success',
+    checksum: 'checksum',
+    execution_time: 'execution_time'
+  };
+
+  export type Sqlx_migrationsScalarFieldEnum = (typeof Sqlx_migrationsScalarFieldEnum)[keyof typeof Sqlx_migrationsScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -93455,6 +94604,65 @@ export namespace Prisma {
     amount?: DecimalWithAggregatesFilter<"withdrawal"> | Decimal | DecimalJsLike | number | string
     redeemer_id?: BigIntNullableWithAggregatesFilter<"withdrawal"> | bigint | number | null
     tx_id?: BigIntWithAggregatesFilter<"withdrawal"> | bigint | number
+  }
+
+  export type sqlx_migrationsWhereInput = {
+    AND?: sqlx_migrationsWhereInput | sqlx_migrationsWhereInput[]
+    OR?: sqlx_migrationsWhereInput[]
+    NOT?: sqlx_migrationsWhereInput | sqlx_migrationsWhereInput[]
+    version?: BigIntFilter<"sqlx_migrations"> | bigint | number
+    description?: StringFilter<"sqlx_migrations"> | string
+    installed_on?: DateTimeFilter<"sqlx_migrations"> | Date | string
+    success?: BoolFilter<"sqlx_migrations"> | boolean
+    checksum?: BytesFilter<"sqlx_migrations"> | Uint8Array
+    execution_time?: BigIntFilter<"sqlx_migrations"> | bigint | number
+  }
+
+  export type sqlx_migrationsOrderByWithRelationInput = {
+    version?: SortOrder
+    description?: SortOrder
+    installed_on?: SortOrder
+    success?: SortOrder
+    checksum?: SortOrder
+    execution_time?: SortOrder
+  }
+
+  export type sqlx_migrationsWhereUniqueInput = Prisma.AtLeast<{
+    version?: bigint | number
+    AND?: sqlx_migrationsWhereInput | sqlx_migrationsWhereInput[]
+    OR?: sqlx_migrationsWhereInput[]
+    NOT?: sqlx_migrationsWhereInput | sqlx_migrationsWhereInput[]
+    description?: StringFilter<"sqlx_migrations"> | string
+    installed_on?: DateTimeFilter<"sqlx_migrations"> | Date | string
+    success?: BoolFilter<"sqlx_migrations"> | boolean
+    checksum?: BytesFilter<"sqlx_migrations"> | Uint8Array
+    execution_time?: BigIntFilter<"sqlx_migrations"> | bigint | number
+  }, "version">
+
+  export type sqlx_migrationsOrderByWithAggregationInput = {
+    version?: SortOrder
+    description?: SortOrder
+    installed_on?: SortOrder
+    success?: SortOrder
+    checksum?: SortOrder
+    execution_time?: SortOrder
+    _count?: sqlx_migrationsCountOrderByAggregateInput
+    _avg?: sqlx_migrationsAvgOrderByAggregateInput
+    _max?: sqlx_migrationsMaxOrderByAggregateInput
+    _min?: sqlx_migrationsMinOrderByAggregateInput
+    _sum?: sqlx_migrationsSumOrderByAggregateInput
+  }
+
+  export type sqlx_migrationsScalarWhereWithAggregatesInput = {
+    AND?: sqlx_migrationsScalarWhereWithAggregatesInput | sqlx_migrationsScalarWhereWithAggregatesInput[]
+    OR?: sqlx_migrationsScalarWhereWithAggregatesInput[]
+    NOT?: sqlx_migrationsScalarWhereWithAggregatesInput | sqlx_migrationsScalarWhereWithAggregatesInput[]
+    version?: BigIntWithAggregatesFilter<"sqlx_migrations"> | bigint | number
+    description?: StringWithAggregatesFilter<"sqlx_migrations"> | string
+    installed_on?: DateTimeWithAggregatesFilter<"sqlx_migrations"> | Date | string
+    success?: BoolWithAggregatesFilter<"sqlx_migrations"> | boolean
+    checksum?: BytesWithAggregatesFilter<"sqlx_migrations"> | Uint8Array
+    execution_time?: BigIntWithAggregatesFilter<"sqlx_migrations"> | bigint | number
   }
 
   export type ada_potsCreateInput = {
@@ -98731,6 +99939,69 @@ export namespace Prisma {
     tx_id?: BigIntFieldUpdateOperationsInput | bigint | number
   }
 
+  export type sqlx_migrationsCreateInput = {
+    version: bigint | number
+    description: string
+    installed_on?: Date | string
+    success: boolean
+    checksum: Uint8Array
+    execution_time: bigint | number
+  }
+
+  export type sqlx_migrationsUncheckedCreateInput = {
+    version: bigint | number
+    description: string
+    installed_on?: Date | string
+    success: boolean
+    checksum: Uint8Array
+    execution_time: bigint | number
+  }
+
+  export type sqlx_migrationsUpdateInput = {
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+    description?: StringFieldUpdateOperationsInput | string
+    installed_on?: DateTimeFieldUpdateOperationsInput | Date | string
+    success?: BoolFieldUpdateOperationsInput | boolean
+    checksum?: BytesFieldUpdateOperationsInput | Uint8Array
+    execution_time?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type sqlx_migrationsUncheckedUpdateInput = {
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+    description?: StringFieldUpdateOperationsInput | string
+    installed_on?: DateTimeFieldUpdateOperationsInput | Date | string
+    success?: BoolFieldUpdateOperationsInput | boolean
+    checksum?: BytesFieldUpdateOperationsInput | Uint8Array
+    execution_time?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type sqlx_migrationsCreateManyInput = {
+    version: bigint | number
+    description: string
+    installed_on?: Date | string
+    success: boolean
+    checksum: Uint8Array
+    execution_time: bigint | number
+  }
+
+  export type sqlx_migrationsUpdateManyMutationInput = {
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+    description?: StringFieldUpdateOperationsInput | string
+    installed_on?: DateTimeFieldUpdateOperationsInput | Date | string
+    success?: BoolFieldUpdateOperationsInput | boolean
+    checksum?: BytesFieldUpdateOperationsInput | Uint8Array
+    execution_time?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type sqlx_migrationsUncheckedUpdateManyInput = {
+    version?: BigIntFieldUpdateOperationsInput | bigint | number
+    description?: StringFieldUpdateOperationsInput | string
+    installed_on?: DateTimeFieldUpdateOperationsInput | Date | string
+    success?: BoolFieldUpdateOperationsInput | boolean
+    checksum?: BytesFieldUpdateOperationsInput | Uint8Array
+    execution_time?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
   export type BigIntFilter<$PrismaModel = never> = {
     equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
     in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
@@ -102925,6 +104196,43 @@ export namespace Prisma {
     amount?: SortOrder
     redeemer_id?: SortOrder
     tx_id?: SortOrder
+  }
+
+  export type sqlx_migrationsCountOrderByAggregateInput = {
+    version?: SortOrder
+    description?: SortOrder
+    installed_on?: SortOrder
+    success?: SortOrder
+    checksum?: SortOrder
+    execution_time?: SortOrder
+  }
+
+  export type sqlx_migrationsAvgOrderByAggregateInput = {
+    version?: SortOrder
+    execution_time?: SortOrder
+  }
+
+  export type sqlx_migrationsMaxOrderByAggregateInput = {
+    version?: SortOrder
+    description?: SortOrder
+    installed_on?: SortOrder
+    success?: SortOrder
+    checksum?: SortOrder
+    execution_time?: SortOrder
+  }
+
+  export type sqlx_migrationsMinOrderByAggregateInput = {
+    version?: SortOrder
+    description?: SortOrder
+    installed_on?: SortOrder
+    success?: SortOrder
+    checksum?: SortOrder
+    execution_time?: SortOrder
+  }
+
+  export type sqlx_migrationsSumOrderByAggregateInput = {
+    version?: SortOrder
+    execution_time?: SortOrder
   }
 
   export type BigIntFieldUpdateOperationsInput = {

@@ -870,6 +870,15 @@ exports.Prisma.WithdrawalScalarFieldEnum = {
   tx_id: 'tx_id'
 };
 
+exports.Prisma.Sqlx_migrationsScalarFieldEnum = {
+  version: 'version',
+  description: 'description',
+  installed_on: 'installed_on',
+  success: 'success',
+  checksum: 'checksum',
+  execution_time: 'execution_time'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1035,7 +1044,8 @@ exports.Prisma.ModelName = {
   tx_out: 'tx_out',
   voting_anchor: 'voting_anchor',
   voting_procedure: 'voting_procedure',
-  withdrawal: 'withdrawal'
+  withdrawal: 'withdrawal',
+  sqlx_migrations: 'sqlx_migrations'
 };
 
 /**
